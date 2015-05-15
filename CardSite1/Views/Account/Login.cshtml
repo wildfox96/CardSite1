@@ -1,0 +1,20 @@
+﻿@model CardSite1.Models.LoginModel
+@{
+    ViewBag.Title = Resources.Resource.Entrance;
+}
+
+<div class="col-md-5 col-md-offset-4">
+    <h1>@Resources.Resource.Entrance</h1>
+    @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+    {
+        @Html.ValidationSummary(true)
+        <p>
+            @Html.DisplayNameFor(e => e.Email): @Html.EditorFor(e => e.Email)@Html.ValidationMessageFor(e => e.Email)
+        </p>
+        <p>
+            @Html.DisplayNameFor(e => e.Password) : @Html.EditorFor(e => e.Password)@Html.ValidationMessageFor(e => e.Password)
+        </p>
+        <input class="btn  btn-primary" type="submit" value="Enter" />
+    }
+</div>
+

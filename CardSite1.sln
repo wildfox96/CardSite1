@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardSite1", "CardSite1\CardSite1.csproj", "{BBBF60DC-AE40-4EC3-A303-27CDF8DBCC44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardSite1.Tests", "CardSite1.Tests\CardSite1.Tests.csproj", "{9AE4D844-C62F-4E8F-BD11-C003D8B6FFB0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BBBF60DC-AE40-4EC3-A303-27CDF8DBCC44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBBF60DC-AE40-4EC3-A303-27CDF8DBCC44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBBF60DC-AE40-4EC3-A303-27CDF8DBCC44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBBF60DC-AE40-4EC3-A303-27CDF8DBCC44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AE4D844-C62F-4E8F-BD11-C003D8B6FFB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AE4D844-C62F-4E8F-BD11-C003D8B6FFB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AE4D844-C62F-4E8F-BD11-C003D8B6FFB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AE4D844-C62F-4E8F-BD11-C003D8B6FFB0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

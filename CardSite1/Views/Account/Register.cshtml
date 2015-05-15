@@ -1,0 +1,35 @@
+﻿@model CardSite1.Models.RegistrationModel
+
+@{
+    ViewBag.Title = Resources.Resource.Registration;
+}
+
+<div class="col-md-5 col-md-offset-4">
+    <h2>@Resources.Resource.Registration</h2>
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        <p>
+            @Html.DisplayNameFor(e => e.FirstName) : @Html.EditorFor(e => e.FirstName)  @Html.ValidationMessageFor(e => e.FirstName)
+        </p>
+        <p>
+            @Html.DisplayNameFor(e => e.LastName) : @Html.EditorFor(e => e.LastName)@Html.ValidationMessageFor(e => e.LastName)
+        </p>
+        <p>
+            @Html.DisplayNameFor(e => e.LoginName) : @Html.EditorFor(e => e.LoginName)@Html.ValidationMessageFor(e => e.LoginName)
+        </p>
+        <p>
+            @Html.DisplayNameFor(e => e.Email) : @Html.EditorFor(e => e.Email)  @Html.ValidationMessageFor(e => e.Email)
+        </p>
+        <p>
+            @Html.DisplayNameFor(e => e.Password) : @Html.EditorFor(e => e.Password) @Html.ValidationMessageFor(e => e.Password)
+        </p>
+        <p>
+            @Html.DisplayNameFor(e => e.ConfirmPassword) : @Html.EditorFor(e => e.ConfirmPassword) @Html.ValidationMessageFor(e => e.ConfirmPassword)
+        </p>
+        <input type="submit" class="btn  btn-primary" value="Regist" />
+    }
+</div>
+
+

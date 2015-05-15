@@ -1,0 +1,16 @@
+﻿@using (Html.BeginForm("ChangeCulture", "Home", FormMethod.Post, new { id = "changeLanguage" }))
+{
+    <select style="margin-top: 8px;" class="form-control" name="lang"
+            onchange="document.getElementById('changeLanguage').submit();">
+        @if (Resources.Resource.Language.Equals("Русский"))
+        {
+            <option selected value="ru">Русский</option>
+            <option value="en">English</option>
+        }
+        else
+        {
+            <option value="ru">Русский</option>
+            <option selected value="en">English</option>
+        }
+    </select>
+}
