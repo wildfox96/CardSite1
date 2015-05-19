@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Web;
@@ -25,65 +26,51 @@ namespace CardSite1.Controllers
             return View();
         }
 
-        //[HttpGet]
-        //public ActionResult AddContactInformation()
-        //{
-        //    userRepository.AddContactInformation(new UserModel());
-        //    context.Users.ToList();
-        //    return View();
-        //}
-
+        [HttpGet]
         public ActionResult AddContactInformation()
         {
             return View();
         }
 
+        #region
+        //Not working yet
+
+
         //[HttpPost]
         //public ActionResult AddContactInformation(UserModel model, AddressModel address)
         //{
-            
-        //        UserModel user = new UserModel
-        //        {
-        //            Id = AuthoriseData.GetUserId(),
-        //            LastName = model.LastName,
-        //            Post = model.Post,
-        //            Place = model.Place,
-        //            Addresses = new List<AddressModel>
-        //            {
-        //                new AddressModel
-        //                {
-        //                    UserId = AuthoriseData.GetUserId(),
-        //                    Address = address.Address,
-        //                    Comment = address.Comment
-        //                }
-        //            }
-        //        };
-        //        context.Entry(user).State=EntityState.Modified;
-        //        context.SaveChanges();
-            
+
+        //    UserModel user = new UserModel
+        //    {
+        //        Id = AuthoriseData.GetUserId(),
+        //        Post = model.Post,
+        //        Place = model.Place,
+        //
+        //        //Addresses = new List<AddressModel>
+        //        //    {
+        //        //        new AddressModel
+        //        //        {
+        //        //            UserId = AuthoriseData.GetUserId(),
+        //        //            Address = address.Address,
+        //        //            Comment = address.Comment
+        //        //        }
+        //        //    }
+        //    };
+        //    context.Entry(user).State = EntityState.Modified;
+        //    context.SaveChanges();
+
         //    return View(model);
         //}
+        #endregion
 
         [HttpPost]
-        public ActionResult AddContactInformation(UserModel model, AddressModel address)
+        public ActionResult AddContactInformation(UserViewModel model)
         {
-
-            UserModel user = new UserModel
-            {
-                Id = AuthoriseData.GetUserId(),
-                LastName = model.LastName,
-                Post = model.Post,
-                Place = model.Place,
-                Addresses = new List<AddressModel>
-                    {
-                        new AddressModel
-                        {
-                            UserId = AuthoriseData.GetUserId(),
-                            Address = address.Address,
-                            Comment = address.Comment
-                        }
-                    }
-            };
+            UserModel user = context.Users.Find(AuthoriseData.GetUserId());
+            if (user == null)
+                return HttpNotFound();
+            user.Post = model.Post;
+            user.Place = model.Place;
             context.Entry(user).State = EntityState.Modified;
             context.SaveChanges();
 

@@ -1,4 +1,4 @@
-﻿@model CardSite1.Models.UserModel
+﻿@model CardSite1.Models.UserViewModel
 @{
     ViewBag.Title = "AddContactInfo";
 }
@@ -13,12 +13,12 @@
             Html.DisplayNameFor(@e => e.Address): Html.EditorFor(@e => e.Address)Html.ValidationMessageFor(@e => e.Address)
         </p>
     }*@
-
-    @*<p>
+    @Html.HiddenFor(model=>model.Id)
+    <p>
         @Html.DisplayNameFor(e => e.Post): @Html.EditorFor(e => e.Post)@Html.ValidationMessageFor(e => e.Post)
     </p>
     <p>
         @Html.DisplayNameFor(e => e.Place): @Html.EditorFor(e => e.Place)@Html.ValidationMessageFor(e => e.Place)
-    </p>*@
+    </p>
     <input class="btn  btn-primary" type="submit" value="Enter" />
 }
