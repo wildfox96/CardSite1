@@ -18,5 +18,6 @@ namespace CardSite1.Abstract
         bool UserExists(string login, string email);
         void BlockUser(int id);
         void UnBlockUser(int id);
+        void AddContactInformation(UserModel model);
     }
 }

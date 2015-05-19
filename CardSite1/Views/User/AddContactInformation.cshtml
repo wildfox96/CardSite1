@@ -1,0 +1,24 @@
+﻿@model CardSite1.Models.UserModel
+@{
+    ViewBag.Title = "AddContactInfo";
+}
+
+<h2>AddContactInfo</h2>
+@using (Html.BeginForm("AddcontactInformation", "User", FormMethod.Post))
+{
+    @Html.ValidationSummary(true)
+    @*foreach (var e in Model.Addresses)
+    {
+        <p>
+            Html.DisplayNameFor(@e => e.Address): Html.EditorFor(@e => e.Address)Html.ValidationMessageFor(@e => e.Address)
+        </p>
+    }*@
+
+    @*<p>
+        @Html.DisplayNameFor(e => e.Post): @Html.EditorFor(e => e.Post)@Html.ValidationMessageFor(e => e.Post)
+    </p>
+    <p>
+        @Html.DisplayNameFor(e => e.Place): @Html.EditorFor(e => e.Place)@Html.ValidationMessageFor(e => e.Place)
+    </p>*@
+    <input class="btn  btn-primary" type="submit" value="Enter" />
+}

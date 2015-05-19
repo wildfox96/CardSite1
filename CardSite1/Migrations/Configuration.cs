@@ -10,6 +10,7 @@ namespace CardSite1.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(CardSite1.Models.Context context)

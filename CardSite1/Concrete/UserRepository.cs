@@ -1,8 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Net;
+using System.Web.Mvc;
 using CardSite1.Abstract;
 using CardSite1.Models;
+using Microsoft.Ajax.Utilities;
+using Context = CardSite1.Models.Context;
 
 namespace CardSite1.Concrete
 {
@@ -75,6 +80,29 @@ namespace CardSite1.Concrete
             UserModel user = contex.Users.Find(userId);
             user.RoleId -= 3;
             contex.Entry(user).State=EntityState.Modified;
+            contex.SaveChanges();
+        }
+
+        public void AddContactInformation(UserModel model)
+        {
+            UserModel user = new UserModel
+            {
+                FirstName = "Kate",
+                LastName = "Shunk",
+                Email = "olg.nosik@gmail.com",
+                Post = "CEO",
+                Place = "Company",
+                Addresses = new List<AddressModel>
+                {
+                    new AddressModel
+                    {
+                        UserId = model.Id,
+                        Address = "Vitebsk",
+                        Comment = "Home"
+                    }
+                }
+            };
+            contex.Entry(user).State=EntityState.Added;
             contex.SaveChanges();
         }
     }
