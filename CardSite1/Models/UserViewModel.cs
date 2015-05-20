@@ -13,6 +13,7 @@ namespace CardSite1.Models
         public string Post { get; set; }
         [Display(Name = "Place Of Employment")]
         public string Place { get; set; }
+        public ICollection<AddressModel> Addresses { get; set; }
 
 
     }

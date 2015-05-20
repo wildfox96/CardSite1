@@ -6,7 +6,9 @@ using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 using System.Web.Security;
+using System.Web.UI.WebControls;
 using CardSite1.Abstract;
 using CardSite1.Infrastructure;
 using CardSite1.Filters;
@@ -19,11 +21,12 @@ namespace CardSite1.Controllers
     public class UserController : Controller
     {
         private IUserRepository userRepository;
-        private Context context = new Context();
+        Context context = new Context();
 
+        [HttpGet]
         public ActionResult Index()
         {
-            return View();
+                return View();
         }
 
         [HttpGet]
@@ -63,6 +66,7 @@ namespace CardSite1.Controllers
         //}
         #endregion
 
+        //Add Post & Place to current user
         [HttpPost]
         public ActionResult AddContactInformation(UserViewModel model)
         {
@@ -77,5 +81,31 @@ namespace CardSite1.Controllers
             return View(model);
         }
 
+        [HttpGet]
+        public ActionResult AddContacts()
+        {
+            return View();
+        }
+
+        //Add address to current user
+        [HttpPost]
+        public ActionResult AddContacts(AddressViewModel model)
+        {
+            UserModel user = context.Users.Find(AuthoriseData.GetUserId());
+            if (user == null)
+                return HttpNotFound();
+            user.Addresses = new List<AddressModel>
+            {
+                new AddressModel
+                {
+                    Address = model.Address,
+                    Comment = model.Comment,
+                    UserId = user.Id
+                }
+            };
+            context.Entry(user).State = EntityState.Modified;
+            context.SaveChanges();
+            return View(model);
+        }
     }
 }

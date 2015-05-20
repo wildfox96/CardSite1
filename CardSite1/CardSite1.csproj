@@ -155,6 +155,7 @@
     <Compile Include="Mapping\UserMap.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AddressModel.cs" />
+    <Compile Include="Models\AddressViewModel.cs" />
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\ExternalEmailModel.cs" />
     <Compile Include="Models\ExternalLinkModel.cs" />
@@ -241,6 +242,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_LanguagePartial.cshtml" />
     <Content Include="Views\User\AddContactInformation.cshtml" />
+    <Content Include="Views\User\AddContacts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

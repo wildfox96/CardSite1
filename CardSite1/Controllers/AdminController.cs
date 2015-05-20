@@ -44,6 +44,7 @@ namespace CardSite1.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
         public ActionResult Edit(int id)
         {
             UserModel user = repository.Users.FirstOrDefault(n => n.Id == id);

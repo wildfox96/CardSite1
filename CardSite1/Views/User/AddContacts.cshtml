@@ -1,0 +1,18 @@
+﻿@model CardSite1.Models.AddressViewModel
+@{
+    ViewBag.Title = "AddContacts";
+}
+
+<h2>AddContactInfo</h2>
+@using (Html.BeginForm("AddContacts", "User", FormMethod.Post))
+{
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.Id)
+    <p>
+        @Html.DisplayNameFor(e => e.Address): @Html.EditorFor(e => e.Address)@Html.ValidationMessageFor(e => e.Address)
+    </p>
+    <p>
+        @Html.DisplayNameFor(e => e.Comment): @Html.EditorFor(e => e.Comment)@Html.ValidationMessageFor(e => e.Comment)
+    </p>
+    <input class="btn  btn-primary" type="submit" value="Enter" />
+}
