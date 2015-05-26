@@ -24,12 +24,14 @@ namespace CardSite1.Models
 
         [Display(Name = "Place Of Employment")]
         public string Place { get; set; }
-        public ICollection<AddressModel> Addresses { get; set; }
-        public ICollection<ExternalEmailModel> ExternalEmails { get; set; }
-        public ICollection<ExternalLinkModel> ExternalLinks { get; set; }
-        public ICollection<FaxModel> Faxs { get; set; }
-        public ICollection<SkypeModel> Skypes { get; set; }
-        public ICollection<TelephoneNumberModel> TelephoneNumbers { get; set; } 
+
+        public virtual ICollection<CardModel> Cards { get; set; }
+        public virtual ICollection<AddressModel> Addresses { get; set; }
+        public virtual ICollection<ExternalEmailModel> ExternalEmails { get; set; }
+        public virtual ICollection<ExternalLinkModel> ExternalLinks { get; set; }
+        public virtual ICollection<FaxModel> Faxs { get; set; }
+        public virtual ICollection<SkypeModel> Skypes { get; set; }
+        public virtual ICollection<TelephoneNumberModel> TelephoneNumbers { get; set; } 
 
     }
 }

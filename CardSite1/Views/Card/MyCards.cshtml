@@ -1,0 +1,14 @@
+﻿@using CardSite1.Models
+
+@model IQueryable<CardModel>
+
+<h3>@Resources.Resource.My_cards:</h3>
+<ul>
+@foreach (CardModel card in Model)
+{
+    <li>
+        @Html.ActionLink(card.Name, "Show", "Card", new {id = card.Id}, null)
+        @Html.ActionLink(Resources.Resource.Edit, "Edit", "Card", new { id = card.Id }, null)
+    </li>
+}
+</ul>

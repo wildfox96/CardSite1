@@ -106,6 +106,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Изменить.
+        /// </summary>
+        public static string Edit {
+            get {
+                return ResourceManager.GetString("Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Email.
         /// </summary>
         public static string Email {
@@ -214,6 +223,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Выйти.
+        /// </summary>
+        public static string Log_off {
+            get {
+                return ResourceManager.GetString("Log_off", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Логин.
         /// </summary>
         public static string Login {
@@ -228,6 +246,15 @@ namespace Resources {
         public static string Login_required {
             get {
                 return ResourceManager.GetString("Login_required", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Мои визитки.
+        /// </summary>
+        public static string My_cards {
+            get {
+                return ResourceManager.GetString("My_cards", resourceCulture);
             }
         }
         

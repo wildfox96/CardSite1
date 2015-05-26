@@ -198,4 +198,13 @@
   <data name="Entrance" xml:space="preserve">
     <value>Вход</value>
   </data>
+  <data name="Log_off" xml:space="preserve">
+    <value>Выйти</value>
+  </data>
+  <data name="My_cards" xml:space="preserve">
+    <value>Мои визитки</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Изменить</value>
+  </data>
 </root>

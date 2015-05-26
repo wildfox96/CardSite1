@@ -131,16 +131,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\CardComponents\ILinkedTextBoxRepository.cs" />
+    <Compile Include="Abstract\CardComponents\IRectangleRepository.cs" />
+    <Compile Include="Abstract\CardComponents\ITextBoxRepository.cs" />
+    <Compile Include="Abstract\ICardRepository.cs" />
     <Compile Include="Abstract\IRegistrationConfirmation.cs" />
     <Compile Include="Abstract\IUserRepository.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Concrete\CardComponents\LinkedTextBoxRepository.cs" />
+    <Compile Include="Concrete\CardComponents\RectangleRepository.cs" />
+    <Compile Include="Concrete\CardComponents\TextBoxRepository.cs" />
+    <Compile Include="Concrete\CardRepository.cs" />
     <Compile Include="Concrete\RegistrationConfirmation.cs" />
     <Compile Include="Concrete\UserRepository.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\CardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OwnerController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -152,10 +161,17 @@
     <Compile Include="Infrastructure\NinjectControllerFactory.cs" />
     <Compile Include="Infrastructure\PageAuthorizeAttribute.cs" />
     <Compile Include="Mapping\AddressMap.cs" />
+    <Compile Include="Mapping\CardComponents\RectangleMap.cs" />
+    <Compile Include="Mapping\CardComponents\TextBoxMap.cs" />
+    <Compile Include="Mapping\CardMap.cs" />
     <Compile Include="Mapping\UserMap.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AddressModel.cs" />
     <Compile Include="Models\AddressViewModel.cs" />
+    <Compile Include="Models\CardModel.cs" />
+    <Compile Include="Models\CardComponents\LinkedTextBoxModel.cs" />
+    <Compile Include="Models\CardComponents\RectangleModel.cs" />
+    <Compile Include="Models\CardComponents\TextBoxModel.cs" />
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\ExternalEmailModel.cs" />
     <Compile Include="Models\ExternalLinkModel.cs" />
@@ -199,6 +215,10 @@
     <Content Include="Content\bootstrap.css.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
+    <Content Include="Scripts\editCard.js" />
+    <Content Include="Scripts\showCard.js" />
+    <Content Include="Scripts\jcanvas.js" />
+    <Content Include="Scripts\jcanvas.min.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="Scripts\jquery-2.1.4.min.map" />
@@ -243,10 +263,14 @@
     <Content Include="Views\Shared\_LanguagePartial.cshtml" />
     <Content Include="Views\User\AddContactInformation.cshtml" />
     <Content Include="Views\User\AddContacts.cshtml" />
+    <Content Include="Views\Card\Show.cshtml" />
+    <Content Include="Views\Card\MyCards.cshtml" />
+    <Content Include="Views\Card\Error.cshtml" />
+    <Content Include="Views\Card\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Owner\" />
+    <Folder Include="Views\Shared\Owner\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

@@ -1,0 +1,23 @@
+﻿@using CardSite1.Models.CardComponents;
+@using Newtonsoft.Json
+
+@model CardSite1.Models.CardModel
+
+@section Scripts
+{
+    <script type="text/javascript" src="@Url.Content("/Scripts/showCard.js")"></script>
+    <script>
+        $(document).ready(function()
+        {
+            var card = @Html.Raw(JsonConvert.SerializeObject(Model));
+            showCard(card);
+        });
+    </script>
+}
+
+<h2>@Model.Name</h2>
+<canvas style="box-shadow: 0 0 10px rgba(0,0,0,0.5);" width='450' height='250' style="background: @Model.Color" id=@Model.Id></canvas>
+
+
+
+

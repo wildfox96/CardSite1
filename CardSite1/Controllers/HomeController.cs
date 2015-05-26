@@ -30,7 +30,7 @@ namespace CardSite1.Controllers
         }
         public ActionResult ChangeCulture(string lang)
         {
-            string returnUrl = Request.UrlReferrer.AbsolutePath;
+            string returnUrl = Request.UrlReferrer.AbsoluteUri;
             HttpCookie cookie = Request.Cookies["lang"];
             if (cookie != null)
                 cookie.Value = lang;

@@ -25,7 +25,7 @@ namespace CardSite1.Tests.Mapping
                     LastName = "Shunkevich",
                     Post = "CEO",
                     Place = "MyCompany",
-                    Addresses = new List<AddressModel>
+                    Cards = new List<AddressModel>
                     {
                         new AddressModel
                         {

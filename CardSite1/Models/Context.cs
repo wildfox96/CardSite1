@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CardSite1.Models.CardComponents;
+using System;
 using System.Data.Entity;
 
 namespace CardSite1.Models
@@ -16,13 +17,12 @@ namespace CardSite1.Models
         public DbSet<SkypeModel> Skypes { get; set; }
         public DbSet<ExternalLinkModel> Links { get; set; }
 
-        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<AddressModel>()
-        //                .HasRequired<UserModel>(s => s.User)
-        //                .WithMany(s => s.Addresses)
-        //                .HasForeignKey(s => s.UserId);
-        //    base.OnModelCreating(modelBuilder);
-        //}
+        //Card:
+
+        public DbSet<CardModel> Cards { get; set; }
+        public DbSet<RectangleModel> Rectangles { get; set; }
+        public DbSet<TextBoxModel> TextBoxs { get; set; }
+        public DbSet<LinkedTextBoxModel> LinkedTextBoxs { get; set; }
+
     }
 }
